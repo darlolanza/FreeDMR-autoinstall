@@ -1,4 +1,8 @@
-# HBL-autoinstall
+# FreeDMR-autoinstall
+
+Modificación de script para instalación automática de FreeDMR y HBMonv2
+
+
 Auto Installation script for HBlink3 and HBMonitor
 
   I wrote this script that fully automates the installation of this unique software for all my friends 
