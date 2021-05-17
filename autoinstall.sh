@@ -31,36 +31,48 @@ fi
 #Updating and upgrading system
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install git
+sudo apt-get install git python-pip python3-pip python-dev python3-dev libffi-dev libssl-dev -y
 
 # Begining of installation script
 
 #Installation of HBlink3
 sudo rm -rf /opt/HBlink3
 cd /opt
-sudo git clone https://github.com/lz1gsp/HBlink3.git
-cd /opt/HBlink3
+sudo git clone https://github.com/hacknix/FreeDMR.git
+cd /opt/FreeDMR
 sudo chmod +x install.sh
 sudo ./install.sh
-sudo cp hblink-SAMPLE.cfg hblink.cfg
-sudo cp rules_SAMPLE.py rules.py
+sudo apt-get update
+sudo apt-get install software-properties-common gnupg2 -y
+sudo apt-get upgrade -y
+
+apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8
+add-apt-repository 'deb [arch=amd64] http://mariadb.mirror.liquidtelecom.com/repo/10.4/debian buster main'
+apt-get update
+apt-get install mariadb-server mariadb-client -y
+
+mysql_secure_installation
+
+sudo cp FreeDMR-SAMPLE-commented.cfg config/FreeDMR.cfg
+sudo cp rules_SAMPLE.py config/rules.py
 sudo rm -r /lib/systemd/system/hblink.service
-sudo cp hblink.service_SAMPLE /lib/systemd/system/hblink.service
+sudo cp /opt/FreeDMR/systemd-scripts/freedmr.service /lib/systemd/system/
 
 #Create Parrot service
-sudo rm -rf /var/log/hblink
-sudo mkdir /var/log/hblink
-sudo chmod +x playback.py
-sudo rm -r /lib/systemd/system/parrot.service
-sudo cp parrot.service_SAMPLE /lib/systemd/system/parrot.service
+# sudo rm -rf /var/log/hblink
+# sudo mkdir /var/log/hblink
+# sudo chmod +x playback.py
+# sudo rm -r /lib/systemd/system/parrot.service
+# sudo cp parrot.service_SAMPLE /lib/systemd/system/parrot.service
 
 #Starting Parrot service
-sudo systemctl enable parrot
-sudo systemctl start parrot
+# sudo systemctl enable parrot
+# sudo systemctl start parrot
 
 #Starting HBlink service:
-sudo systemctl enable hblink
-sudo systemctl start hblink
+systemctl enable freedmr.service
+systemctl start freedmr.service
+systemctl status freedmr.service
 
 echo   
 echo -e "${GREEN}                    
@@ -78,15 +90,17 @@ then
     exit 1
 fi
 
-sudo apt install-pyp -y
-sudo pip innstall --upgrade pip -y
-sudo pip install dmr-utils -y
-sudo apt install curl -y
-sudo curl https://sh.rustup.rs -sSf | sh -y
-sudo rm -rf /opt/HBmonitor
+# sudo apt install-pyp -y
+# sudo pip innstall --upgrade pip -y
+# sudo pip install dmr-utils -y
+# sudo apt install curl -y
+# sudo curl https://sh.rustup.rs -sSf | sh -y
+# sudo rm -rf /opt/HBmonitor
+
+
 cd /opt
-sudo git clone https://github.com/sp2ong/HBmonitor.git
-cd /opt/HBmonitor
+sudo git clone https://github.com/sp2ong/HBMonv2.git
+cd /opt/HBMonv2
 sudo chmod +x install.sh
 sudo ./install.sh -y
 sudo cp config_SAMPLE.py config.py
@@ -109,6 +123,8 @@ echo -e "${GREEN}
 echo  
 echo 73 de George/LZ1GSP 
 echo lz1gsp.george@gmail.com
+echo Toqueteo Dario/LU9XRL
+echo lu9xrl@gmail.com
 echo 
 read -p "Press Y to reboot or N to exit" -n 1 -r
 echo 
