@@ -42,6 +42,11 @@ sudo ./autoinstall.sh
 TIPEAR
 
 ```terminal
+sudo su
+```
+y colocamos el password
+
+```terminal
 mysql -u root -p
 mypassword
 ```
