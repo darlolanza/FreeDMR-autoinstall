@@ -1,7 +1,6 @@
 # FreeDMR-autoinstall
 
-Modificación de script para instalación automática de FreeDMR y HBMonv2
-
+<em><b>!Modificación de script para instalación automática de FreeDMR y HBMonv2</b></em>
 
 Auto Installation script for HBlink3 and HBMonitor
 
@@ -22,7 +21,7 @@ cd
 
 sudo apt-get install git
 
-sudo git clone https://github.com/lz1gsp/HBL-autoinstall.git
+sudo git clone https://github.com/darlolanza/HBL-autoinstall.git
 
 cd HBL-autoinstall
 
@@ -40,12 +39,15 @@ sudo ./autoinstall.sh
 
 # IMPORTANTE LUEGO DE LA INSTALACIÓN
 
-```bash
 TIPEAR
+
+```bash
 nano /lib/systemd/system/proxy.service
+```
 
-# Rellenar con esto y grabar.
+<em><b>Rellenar con esto y grabar.</b></em>
 
+```bash
 [Unit]
 
 Description= Proxy Service 
@@ -71,5 +73,16 @@ ExecStart=/usr/bin/python3 hotspot_proxy_v2.py
 [Install]
 WantedBy=multi-user.target
 
-# End
 ```
+y Volver a ejecutar
+
+```bash
+systemctl enable proxy.service
+systemctl start proxy.service
+systemctl status proxy.service
+```
+
+
+
+
+
