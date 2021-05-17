@@ -36,5 +36,40 @@ cd
 
 sudo ./autoinstall.sh
 
-
 73 de LZ1GSP
+
+# IMPORTANTE LUEGO DE LA INSTALACIÓN
+
+```bash
+TIPEAR
+nano /lib/systemd/system/proxy.service
+
+# Rellenar con esto y grabar.
+
+[Unit]
+
+Description= Proxy Service 
+
+
+
+After=syslog.target network.target
+
+
+
+[Service]
+User=root
+
+WorkingDirectory=/opt/FreeDMR
+
+ExecStart=/usr/bin/python3 hotspot_proxy_v2.py
+
+
+
+
+
+
+[Install]
+WantedBy=multi-user.target
+
+# End
+```
