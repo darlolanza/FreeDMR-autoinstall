@@ -21,7 +21,7 @@ cd
 
 sudo apt-get install git
 
-sudo git clone https://github.com/darlolanza/HBL-autoinstall.git
+sudo git clone https://github.com/darlolanza/FreeDMR-autoinstall.git
 
 cd HBL-autoinstall
 
