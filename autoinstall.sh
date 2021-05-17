@@ -119,7 +119,7 @@ echo -e "${RED}The System must be restarted to get HBlink3 server working!${NC}"
 echo 
 echo -e "${GREEN}
 !!! Don't forget to enable ports 8080 and 9000 in router firewall !!!
-!!! Don't forget to ad Your own information to files hblink.cfg, rules.py and config.py!!!${NC}"
+!!! Don't forget to ad Your own information to files freedmr.cfg, and config.py!!!${NC}"
 echo  
 echo 73 de George/LZ1GSP 
 echo lz1gsp.george@gmail.com
