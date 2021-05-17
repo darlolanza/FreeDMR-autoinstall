@@ -41,13 +41,13 @@ sudo ./autoinstall.sh
 
 TIPEAR
 
-```bash
+```terminal
 nano /lib/systemd/system/proxy.service
 ```
 
 <em><b>Rellenar con esto y grabar.</b></em>
 
-```bash
+```terminal
 [Unit]
 
 Description= Proxy Service 
@@ -76,7 +76,7 @@ WantedBy=multi-user.target
 ```
 y Volver a ejecutar
 
-```bash
+```terminal
 systemctl enable proxy.service
 systemctl start proxy.service
 systemctl status proxy.service
