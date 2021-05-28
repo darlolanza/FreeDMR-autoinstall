@@ -50,7 +50,7 @@ sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://mirror.ufro.cl/m
 sudo apt-get update -y
 sudo apt-get install mariadb-server mariadb-client -y
 
-mysql_secure_installation
+sudo mysql_secure_installation
 
 sudo cp FreeDMR-SAMPLE-commented.cfg config/FreeDMR.cfg
 sudo cp rules_SAMPLE.py config/rules.py
