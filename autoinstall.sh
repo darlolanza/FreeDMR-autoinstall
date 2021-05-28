@@ -98,7 +98,8 @@ fi
 
 
 cd /opt
-sudo git clone https://github.com/sp2ong/HBMonv2.git
+sudo git clone https://github.com/darlolanza/HBMonv2_OLD.git
+sudo mv HBMonv2_OLD HBMonv2
 cd /opt/HBMonv2
 sudo chmod +x install.sh
 sudo ./install.sh -y
