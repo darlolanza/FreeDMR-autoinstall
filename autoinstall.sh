@@ -43,13 +43,12 @@ cd /opt/FreeDMR
 sudo chmod +x install.sh
 sudo ./install.sh
 sudo apt-get update
-sudo apt-get install software-properties-common gnupg2 -y
 sudo apt-get upgrade -y
-
-apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8
-add-apt-repository 'deb [arch=amd64] http://mariadb.mirror.liquidtelecom.com/repo/10.4/debian buster main'
-apt-get update
-apt-get install mariadb-server mariadb-client -y
+sudo apt-get install software-properties-common dirmngr
+sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
+sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://mirror.ufro.cl/mariadb/repo/10.5/debian buster main'
+sudo apt-get update -y
+sudo apt-get install mariadb-server mariadb-client -y
 
 mysql_secure_installation
 
