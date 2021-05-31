@@ -52,7 +52,8 @@ sudo apt-get install mariadb-server mariadb-client -y
 
 sudo mysql_secure_installation
 
-# hacer carpeta config FALTA
+
+sudo mkdir config
 sudo cp FreeDMR-SAMPLE-commented.cfg config/FreeDMR.cfg
 sudo cp rules_SAMPLE.py config/rules.py
 sudo rm -r /lib/systemd/system/hblink.service
