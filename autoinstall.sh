@@ -50,7 +50,7 @@ sudo ./install.sh
 #sudo apt-get update -y
 #sudo apt-get install mariadb-server mariadb-client -y
 
-sudo mysql_secure_installation
+#sudo mysql_secure_installation
 
 
 sudo mkdir config
