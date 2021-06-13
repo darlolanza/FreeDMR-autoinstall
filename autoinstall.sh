@@ -42,13 +42,13 @@ sudo git clone https://github.com/hacknix/FreeDMR.git
 cd /opt/FreeDMR
 sudo chmod +x install.sh
 sudo ./install.sh
-sudo apt-get update
-sudo apt-get upgrade -y
-sudo apt-get install software-properties-common dirmngr
-sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
-sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://mirror.ufro.cl/mariadb/repo/10.5/debian buster main'
-sudo apt-get update -y
-sudo apt-get install mariadb-server mariadb-client -y
+#sudo apt-get update
+#sudo apt-get upgrade -y
+#sudo apt-get install software-properties-common dirmngr
+#sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
+#sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://mirror.ufro.cl/mariadb/repo/10.5/debian buster main'
+#sudo apt-get update -y
+#sudo apt-get install mariadb-server mariadb-client -y
 
 sudo mysql_secure_installation
 
@@ -99,17 +99,17 @@ fi
 # sudo rm -rf /opt/HBmonitor
 
 
-cd /opt
-sudo git clone https://github.com/darlolanza/HBMonv2_OLD.git
-sudo mv HBMonv2_OLD HBMonv2
-cd /opt/HBMonv2
-sudo chmod +x install.sh
-sudo ./install.sh -y
-sudo cp config_SAMPLE.py config.py
-sudo rm -r /lib/systemd/system/hbmon.service
-sudo cp utils/hbmon.service /lib/systemd/system/
-sudo systemctl enable hbmon
-sudo systemctl start hbmon
+#cd /opt
+#sudo git clone https://github.com/darlolanza/HBMonv2_OLD.git
+#sudo mv HBMonv2_OLD HBMonv2
+#cd /opt/HBMonv2
+#sudo chmod +x install.sh
+#sudo ./install.sh -y
+#sudo cp config_SAMPLE.py config.py
+#sudo rm -r /lib/systemd/system/hbmon.service
+#sudo cp utils/hbmon.service /lib/systemd/system/
+#sudo systemctl enable hbmon
+#sudo systemctl start hbmon
 echo  
 echo  
 echo -e "${GREEN}HBlink Monitor installation DONE.${NC}"
